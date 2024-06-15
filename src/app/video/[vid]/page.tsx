@@ -1,7 +1,9 @@
 'use client'
 import { JSX, SVGProps, useEffect, useState } from "react";
+import Image from "next/image";
 import ReactPlayer from "react-player/file"
 import videos from "./data";
+import Link from "next/link";
 
 const navigation = {
   social: [
@@ -68,19 +70,24 @@ export default function Video({ params }: { params: {vid: string} }) {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="text-4xl">
+    <main className="flex flex-col items-center justify-between py-24">
+      <div className="absolute top-4 left-4">
+        <Link href="/">
+          <Image src="/LilSparky.png" alt="Sparky the Mascot. Clicking this loads the home page." width={34} height={64}/>
+        </Link>
+      </div>
+      <div className="text-4xl md:text-5xl pb-2">
         {firework?.name}
       </div>
       <div>
-        { hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} /> }
+        { hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} width="100vw" /> }
       </div>
-      <div className="mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-center">
-        TODO: Other info can go here.
+      <div className="mb-2 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-center">
+        TODO: Put description here.
       </div>
       <footer>
-        <div className="mx-auto max-w-7xl overflow-hidden px-6 py-20 sm:py-24 lg:px-8">
-          <div className="mt-10 flex justify-center space-x-10">
+        <div className="mx-auto overflow-hidden py-10 sm:py-24">
+          <div className="mt-10 md:mt-6 flex justify-center space-x-8">
             {navigation.social.map((item) => (
               <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                 <span className="sr-only">{item.name}</span>
@@ -88,7 +95,7 @@ export default function Video({ params }: { params: {vid: string} }) {
               </a>
             ))}
           </div>
-          <p className="mt-10 text-center text-xs leading-5 text-gray-500">
+          <p className="mt-10 text-center text-xs text-gray-500">
             &copy; 2024 Wiz-Bang Boomers. All rights reserved.<br />
             Site created & maintained by <a href="https://www.ambitiousnerds.com">ambitiousNerds</a>.
           </p>
