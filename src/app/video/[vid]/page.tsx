@@ -1,5 +1,5 @@
-"use client"
-import { JSX, SVGProps } from "react";
+'use client'
+import { JSX, SVGProps, useEffect, useState } from "react";
 import ReactPlayer from "react-player/file"
 
 const navigation = {
@@ -57,13 +57,22 @@ const navigation = {
 
 export default function Video({ params }: { params: {vid: number} }) {
   const videoURL = `/videos/${params.vid}.mp4`;
+  const [hasWindow, setHasWindow] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setHasWindow(true);
+    }
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="text-4xl">
-        {params.vid} {' - Bacon Trek '} 
+        {params.vid} {' - Bacon Trek '}
       </div>
       <div>
-        <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} />
+        {
+          hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} />
+        }
       </div>
       <div className="mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-center">
         TODO: Other info can go here.
@@ -79,7 +88,7 @@ export default function Video({ params }: { params: {vid: number} }) {
             ))}
           </div>
           <p className="mt-10 text-center text-xs leading-5 text-gray-500">
-            &copy; 2023 Wiz-Bang Boomers. All rights reserved.<br />
+            &copy; 2024 Wiz-Bang Boomers. All rights reserved.<br />
             Site created & maintained by <a href="https://www.ambitiousnerds.com">ambitiousNerds</a>.
           </p>
         </div>
