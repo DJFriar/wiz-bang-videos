@@ -1,6 +1,7 @@
 'use client'
 import { JSX, SVGProps, useEffect, useState } from "react";
 import ReactPlayer from "react-player/file"
+import videos from "./data";
 
 const navigation = {
   social: [
@@ -55,8 +56,10 @@ const navigation = {
   ],
 }
 
-export default function Video({ params }: { params: {vid: number} }) {
-  const videoURL = `/videos/${params.vid}.mp4`;
+export default function Video({ params }: { params: {vid: string} }) {
+  const fireworkSKU = params.vid;
+  const videoURL = `/videos/${fireworkSKU}.mp4`;
+  const firework = videos.find((obj) => obj.sku === fireworkSKU);
   const [hasWindow, setHasWindow] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -67,12 +70,10 @@ export default function Video({ params }: { params: {vid: number} }) {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="text-4xl">
-        {params.vid} {' - Bacon Trek '}
+        {firework?.name}
       </div>
       <div>
-        {
-          hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} />
-        }
+        { hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} /> }
       </div>
       <div className="mb-32 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-center">
         TODO: Other info can go here.
