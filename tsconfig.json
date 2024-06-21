@@ -23,6 +23,9 @@
       "@/*": ["./src/*"],
       "@videos/*": [
         "./public/videos/*"
+      ],
+      "@images/*": [
+        "./public/images/*"
       ]
     }
   },
