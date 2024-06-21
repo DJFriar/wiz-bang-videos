@@ -5,7 +5,6 @@ import ReactPlayer from "react-player/file"
 import Link from "next/link";
 
 import videos from "./data";
-// import VideoMissing from '../../../../public/VideoMissing.png'
 
 export default function Video({ params }: { params: {vid: string} }) {
   const fireworkSKU = params.vid;
