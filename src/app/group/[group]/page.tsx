@@ -1,6 +1,8 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { Img } from "react-image";
 
 import { fireworks, groupings } from "./data";
 
@@ -20,13 +22,13 @@ export default function Group({ params }: { params: {group: string} }) {
         {groupFireworks.map((firework) => (
           <li key={firework.sku} className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow">
             <Link href={`/video/${firework.sku}`}>
-              <div className="flex flex-1 flex-col p-2 md:p-4">
-                <div className="flex items-end justify-end space-x-3">
-                  <span className="inline-flex flex-shrink-0 items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">
-                    {firework.price}
-                  </span>
+              <div className="flex flex-1 flex-col items-center p-2 md:p-4">
+                <div className="flex items-center justify-end space-x-3">
+                  { firework.price &&
+                    <span className="inline-flex flex-shrink-0 items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{firework.price} </span>
+                  }
                 </div>
-                <Image src={`/images/${firework.sku}.png`} alt="" width={256} height={256}></Image>
+                <Img src={[`/images/${firework.sku}.png`, '/ImageMissingLight.png']}/>
                 <h3 className=" text-lg md:text-2xl font-medium text-gray-900">{firework.name}</h3>
               </div>
             </Link>
