@@ -29,7 +29,7 @@ export default function Group({ params }: { params: {group: string} }) {
                   }
                 </div>
                 <Img src={[`/images/${firework.sku}.png`, '/ImageMissingLight.png']}/>
-                <h3 className=" text-lg md:text-2xl font-medium text-gray-900">{firework?.sku} - {firework?.name}</h3>
+                <h3 className=" text-lg md:text-2xl font-medium text-gray-900">{firework?.name}</h3>
               </div>
             </Link>
           </li>

@@ -26,7 +26,7 @@ export default function Video({ params }: { params: {vid: string} }) {
         </Link>
       </div>
       <div className="text-4xl md:text-5xl pb-2">
-        {firework?.sku} - {firework?.name}
+        {firework?.name}
       </div>
       { !firework?.hasVideo 
         ? <div className=""><Image src="/VideoMissing.png" alt="" height={400} width={400} /></div>
