@@ -7,6 +7,10 @@ export default function Home() {
       <div className="w-full items-center text-center text-4xl md:text-6xl">
         June 24th, 2024...
       </div>
+      {/* <div className="w-full items-center text-center text-wizBrightRed text-4xl md:text-6xl">
+        OPEN NOW
+        <p className="text-2xl text-wizLightBlue">from 10am-10pm until July 4th.</p>
+      </div> */}
       <Link href="/signboard" >
         <div className="relative hidden md:flex place-items-center ">
           <Image
@@ -30,8 +34,8 @@ export default function Home() {
           />
         </div>
 
-        <div className="text-center text-3xl md:text-5xl">
-          <h2 className="font-bold">Click here to view our inventory!!</h2>
+        <div className="text-center text-3xl md:text-5xl py-2">
+          <h2 className="font-bold text-wizBlue">Click here to view our inventory!!</h2>
         </div>
       </Link>
 
