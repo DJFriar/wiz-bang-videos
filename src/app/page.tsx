@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -6,30 +7,35 @@ export default function Home() {
       <div className="w-full items-center text-center text-4xl md:text-6xl">
         June 24th, 2024...
       </div>
+      <Link href="/signboard" >
+        <div className="relative hidden md:flex place-items-center ">
+          <Image
+            className=""
+            src="/WizBangHeader.png"
+            alt="Wiz-Bang Boomers Logo"
+            width={1200}
+            height={100}
+            priority
+          />
+        </div>
 
-      <div className="relative hidden md:flex place-items-center ">
-        <Image
-          className=""
-          src="/WizBangHeader.png"
-          alt="Wiz-Bang Boomers Logo"
-          width={1200}
-          height={100}
-          priority
-        />
-      </div>
+        <div className="relative hidden max-md:flex place-items-center">
+          <Image
+            className=""
+            src="/WizBangVertical.png"
+            alt="Wiz-Bang Boomers Logo"
+            width={800}
+            height={100}
+            priority
+          />
+        </div>
 
-      <div className="relative hidden max-md:flex place-items-center">
-        <Image
-          className=""
-          src="/WizBangVertical.png"
-          alt="Wiz-Bang Boomers Logo"
-          width={800}
-          height={100}
-          priority
-        />
-      </div>
+        <div className="text-center text-3xl md:text-5xl">
+          <h2 className="font-bold">Click here to view our inventory!!</h2>
+        </div>
+      </Link>
 
-      <div className="text-center text-3xl md:text-5xl">
+      <div className="text-center pt-8 md:pt-0 text-xl lg:text-2xl">
         <p>
           711 Farm Road 1510 <br />
           Brookston, TX 75421
