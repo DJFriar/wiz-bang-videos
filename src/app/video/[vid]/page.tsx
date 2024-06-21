@@ -5,7 +5,7 @@ import ReactPlayer from "react-player/file"
 import Link from "next/link";
 
 import videos from "./data";
-import VideoMissing from '../../../../public/VideoMissing.png'
+// import VideoMissing from '../../../../public/VideoMissing.png'
 
 export default function Video({ params }: { params: {vid: string} }) {
   const fireworkSKU = params.vid;
@@ -30,7 +30,7 @@ export default function Video({ params }: { params: {vid: string} }) {
         {firework?.sku} - {firework?.name}
       </div>
       { !firework?.hasVideo 
-        ? <div className=""><Image src={VideoMissing} alt="" height={400} width={400} /></div>
+        ? <div className=""><Image src="/VideoMissing.png" alt="" height={400} width={400} /></div>
         : <div>{ hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} width="100vw" /> }</div>
       }
 
