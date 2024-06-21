@@ -17,6 +17,8 @@ export default function Video({ params }: { params: {vid: string} }) {
     }
   }, []);
 
+
+
   return (
     <main className="flex flex-col items-center justify-between py-24">
       <div className="absolute top-4 left-4">
@@ -27,10 +29,11 @@ export default function Video({ params }: { params: {vid: string} }) {
       <div className="text-4xl md:text-5xl pb-2">
         {firework?.name}
       </div>
-      { firework?.hasVideo }
-      <div>
-        { hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} width="100vw" /> }
-      </div>
+      { !firework?.hasVideo 
+        ? <div className=""><Image src="/VideoMissing.png" alt="" height={400} width={400} /></div>
+        : <div>{ hasWindow && <ReactPlayer url={videoURL} controls={false} playing={true} muted={true} width="100vw" /> }</div>
+      }
+
       {/* <div className="mb-2 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-center">
         {firework?.description}
       </div> */}
