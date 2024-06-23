@@ -5,6 +5,7 @@ import ReactPlayer from "react-player/file"
 import Link from "next/link";
 
 import videos from "./data";
+import WizFooter from "@/app/components/WizFooter";
 
 export default function Video({ params }: { params: {vid: string} }) {
   const fireworkSKU = params.vid;
@@ -36,6 +37,7 @@ export default function Video({ params }: { params: {vid: string} }) {
       {/* <div className="mb-2 text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:text-center">
         {firework?.description}
       </div> */}
+      <WizFooter />
     </main>
   )
 }

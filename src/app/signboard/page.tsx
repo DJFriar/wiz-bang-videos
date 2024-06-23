@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { groupings } from "../group/[group]/data";
 
+import WizFooter from "../components/WizFooter";
+
 export default function signboard() {
 
   return (
@@ -19,6 +21,7 @@ export default function signboard() {
           </li>
         ))}
       </div>
+      <WizFooter />
     </main>
   )
 }

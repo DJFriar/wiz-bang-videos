@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Img } from "react-image";
 
 import { fireworks, groupings } from "./data";
+import WizFooter from "@/app/components/WizFooter";
 
 export default function Group({ params }: { params: {group: string} }) {
   const groupName = params.group;
@@ -35,9 +36,7 @@ export default function Group({ params }: { params: {group: string} }) {
           </li>
         ))}
       </ul>
-      <div className="mt-4">
-        Footer goes here.
-      </div>
+      <WizFooter />
     </main>
   )
 }
