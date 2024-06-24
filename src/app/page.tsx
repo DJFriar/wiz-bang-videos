@@ -4,13 +4,13 @@ import Link from 'next/link'
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-8 max-sm:pb-24">
-      <div className="w-full items-center text-center text-4xl md:text-6xl">
+      {/* <div className="w-full items-center text-center text-4xl md:text-6xl">
         June 24th, 2024...
-      </div>
-      {/* <div className="w-full items-center text-center text-wizBrightRed text-4xl md:text-6xl">
+      </div> */}
+      <div className="w-full items-center text-center text-wizBrightRed text-4xl md:text-6xl">
         OPEN NOW
         <p className="text-2xl text-wizLightBlue">from 10am-10pm until July 4th.</p>
-      </div> */}
+      </div>
       <Link href="/signboard" >
         <div className="relative hidden md:flex place-items-center ">
           <Image
