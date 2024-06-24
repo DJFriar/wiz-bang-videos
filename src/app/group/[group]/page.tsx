@@ -26,7 +26,7 @@ export default function Group({ params }: { params: {group: string} }) {
               <div className="flex flex-1 flex-col p-2 md:p-4">
                 <div className="flex items-end justify-end space-x-3">
                   { firework.price &&
-                    <span className="inline-flex flex-shrink-0 items-center rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10">{firework.price} </span>
+                    <span className="inline-flex flex-shrink-0 items-center rounded-full bg-wizBlue px-2 py-1 text-lg font-medium text-white ">{firework.price}</span>
                   }
                 </div>
                 <Img src={[`/images/${firework.sku}.png`, '/ImageMissingLight.png']}/>
