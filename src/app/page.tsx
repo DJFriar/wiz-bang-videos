@@ -1,6 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+import WizFooter from './components/WizFooter'
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between py-8 max-sm:pb-24">
@@ -39,15 +41,7 @@ export default function Home() {
         </div>
       </Link>
 
-      <div className="text-center pt-8 md:pt-0 text-xl lg:text-2xl">
-        <p>
-          711 Farm Road 1510 <br />
-          Brookston, TX 75421
-        </p>
-        <p className='mt-6'>
-          <a href="tel:8639492264">(863) WIZ-BANG</a>
-        </p>
-      </div>
+      <WizFooter />
     </main>
   )
 }
