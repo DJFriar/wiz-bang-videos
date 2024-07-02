@@ -8,9 +8,9 @@ import WizFooter from '../components/WizFooter';
 import WizHeaderLogo from '../components/WizHeaderLogo';
 import { fireworks } from '../group/[group]/data';
 
-interface iDefault {
-  defaultValue: string | null
-}
+// interface iDefault {
+//   defaultValue: string | null
+// }
 
 interface iFirework {
   group: string;
@@ -20,8 +20,8 @@ interface iFirework {
   sku: string;
 }
 
-const WizSearch = ({ defaultValue }: iDefault) => {
-  const [searchInput, setSearchInput ] = useState(defaultValue);
+const WizSearch = () => {
+  const [searchInput, setSearchInput ] = useState("");
   const [fireworkData, setFireworkData] = useState<iFirework[]>([]);
   const [runSearch, setRunSearch] = useState(false);
 
