@@ -1,14 +1,16 @@
 import Link from "next/link";
-import Image from "next/image";
 import { groupings } from "../group/[group]/data";
 
 import WizFooter from "../components/WizFooter";
+import WizHeaderLogo from "../components/WizHeaderLogo";
+import WizSearchLink from "../components/WizSearchLink";
 
 export default function signboard() {
 
   return (
     <main className="flex flex-col items-center justify-between py-10 lg:py-8">
-      <Image src="/WizBangHeader.png" alt="Wiz Bang Boomers header logo." priority width={350} height={350} />
+      <WizHeaderLogo />
+      <WizSearchLink />
       <h1 className="font-semibold text-4xl md:text-5xl my-4">Categories</h1>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
         {groupings.map((group) => (
